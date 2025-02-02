@@ -1,0 +1,299 @@
+/* Move all existing CSS here, unchanged */ 
+
+/* Basic page styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #121213, #2b2d42);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Board grid */
+.board {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  gap: 5px;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 5px;
+  justify-content: center;
+}
+
+.tile {
+  width: 60px;
+  height: 60px;
+  background-color: #121213;
+  border: 2px solid #3a3a3c;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;  /* Increased text size for clarity */
+  text-transform: uppercase;
+}
+
+/* Colors for feedback */
+.tile.correct {
+  background-color: #6aaa64;
+  border-color: #6aaa64;
+}
+
+.tile.present {
+  background-color: #c9b458;
+  border-color: #c9b458;
+}
+
+.tile.absent {
+  background-color: #3a3a3c;
+  border-color: #3a3a3c;
+}
+
+/* Animations */
+@keyframes flipTile {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+.tile.flip {
+  animation: flipTile 0.6s ease;
+}
+
+@keyframes shakeRow {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.row.shake {
+  animation: shakeRow 0.5s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); }
+  40% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.tile.pop {
+  animation: popIn 0.1s ease;
+}
+
+/* On-screen keyboard styling */
+.keyboard {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key {
+  background-color: #818384;
+  color: #fff;
+  padding: 15px;
+  min-width: 20px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.key:hover {
+  filter: brightness(1.2);
+}
+
+.key.wide {
+  min-width: 65px;
+  font-size: 0.8em;
+}
+
+/* Message display */
+#message {
+  margin-top: 20px;
+  height: 20px;
+  font-weight: bold;
+  text-align: center;
+  min-height: 20px;
+}
+
+/* Stats display */
+.stats {
+  background: #262627;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  min-width: 300px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #818384;
+  margin-top: 5px;
+}
+
+/* Reset button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background: #818384;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background: #6e6e6f;
+}
+
+/* Popup modal styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #121213;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  max-width: 90%;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#newGameButton {
+  background-color: #6aaa64;
+  color: #fff;
+}
+
+#exitButton {
+  background-color: #3a3a3c;
+  color: #fff;
+}
+
+/* New styling for the control buttons container */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #6aaa64;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.1s;
+  cursor: pointer;
+}
+
+#hintButton {
+  background-color: #0077cc;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .board {
+    margin: 10px auto;
+    padding: 5px;
+  }
+  .keyboard {
+    font-size: 1.2rem;
+  }
+  button {
+    width: 45%;
+    margin: 5px;
+  }
+  .controls {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+} 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FUMBO</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>FUMBO</h1>
+  <div class="board" id="board"></div>
+  <div id="message"></div>
+  <div class="keyboard" id="keyboard"></div>
+  <div class="stats">
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-value" id="gamesPlayed">0</div>
+        <div class="stat-label">Played</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="winPercentage">0%</div>
+        <div class="stat-label">Win %</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="currentStreak">0</div>
+        <div class="stat-label">Current Streak</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="maxStreak">0</div>
+        <div class="stat-label">Max Streak</div>
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <button id="hintButton">💡 Hint</button>
+    <button id="resetButton">Next Game</button>
+  </div>
+
+  <!-- Add the Popup Modal -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h2 id="resultTitle"></h2>
+      <div id="scoreInfo"></div>
+      <button id="newGameButton">New Game</button>
+      <button id="exitButton">Exit</button>
+    </div>
+  </div>
+
+  <script src="js/words.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
