@@ -7,8 +7,8 @@ word_definitions = defaultdict(list)
 
 # Expanded list of prefixes to remove
 prefixes = [
-    'kt', 'ma-', 'mi-', '1', 'nm', 'kv', 'kl', 'ku', 'ki', 'ks', 'kn', 'kh', 
-    'tde', 'tdk', 'tdn', 'tds', 'tdw', 'tden', 'tdew'
+    'kt', 'ma-', 'wa-', 'i-/zi-', 'wa- a-/wa-', 'i-/zi-', 'u-/i', 'u-/i-',  'mi-', '1', 'nm', 'kv', 'kl', 'ku', 'ki', 'ks', 'kn', 'kh', 
+    'tde', 'tdk', 'tdn', 'tds', 'tdw', 'tden', 'tdew', 'vi-', 'a-wa-', 'a-/wa-', 'u-', 'a-/wa', 'vy-', 'vy-vi-', 'ya-', 'mia-', 'a-', 'mi -',
 ]
 
 def clean_definition(definition):
